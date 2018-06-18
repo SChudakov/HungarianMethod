@@ -1,3 +1,6 @@
+import numpy as nm
+
+
 class HMTable:
     empty_line = ''
 
@@ -8,7 +11,7 @@ class HMTable:
     cross_out_marking = "^"
 
     def __init__(self, spending_matrix):
-        self.spending_matrix = spending_matrix
+        self.spending_matrix = nm.array(spending_matrix)
         self.spending_matrix_size = len(spending_matrix)
 
         self.zero_elements_marking = [[''] * len(spending_matrix) for x in range(len(spending_matrix))]

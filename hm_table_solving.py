@@ -23,24 +23,31 @@ def solve_hm_table(table):
 
 
 def subtract_min_values(table):
-    for i in range(table.spending_matrix_size):
-        row_min_value = table.spending_matrix[i][0]
-        for j in range(table.spending_matrix_size):
-            if row_min_value > table.spending_matrix[i][j]:
-                row_min_value = table.spending_matrix[i][j]
-        for j in range(table.spending_matrix_size):
-            table.spending_matrix[i][j] -= row_min_value
+
+    # for i in range(table.spending_matrix_size):
+    #     row_min_value = table.spending_matrix[i][0]
+    #     for j in range(table.spending_matrix_size):
+    #         if row_min_value > table.spending_matrix[i][j]:
+    #             row_min_value = table.spending_matrix[i][j]
+    #     for j in range(table.spending_matrix_size):
+    #         table.spending_matrix[i][j] -= row_min_value
+
+    min_by_rows = table.spending_matrix.min(1)
+    table.spending_matrix -= min_by_rows.transpose()
     print("AFTER SUBTRACTING ROWS MIN VALUES")
     table.output_table()
 
-    for j in range(table.spending_matrix_size):
-        column_min_value = table.spending_matrix[0][j]
+    # for j in range(table.spending_matrix_size):
+    #     column_min_value = table.spending_matrix[0][j]
+    #
+    #     for i in range(table.spending_matrix_size):
+    #         if column_min_value > table.spending_matrix[i][j]:
+    #             column_min_value = table.spending_matrix[i][j]
+    #     for i in range(table.spending_matrix_size):
+    #         table.spending_matrix[i][j] -= column_min_value
 
-        for i in range(table.spending_matrix_size):
-            if column_min_value > table.spending_matrix[i][j]:
-                column_min_value = table.spending_matrix[i][j]
-        for i in range(table.spending_matrix_size):
-            table.spending_matrix[i][j] -= column_min_value
+    min_by_columns = table.spending_matrix.min(0)
+    table.spending_matrix -= min_by_columns
     print("AFTER SUBTRACTING COLUMNS MIN VALUES")
     table.output_table()
 
