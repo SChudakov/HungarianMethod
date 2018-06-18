@@ -28,10 +28,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 16
 
-        result = solve_hm_table(table)
+        result,function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_2(self):
         spending_matrix = [
@@ -55,10 +55,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 24
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_3(self):
         spending_matrix = [
@@ -83,10 +83,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 25
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_4(self):
         spending_matrix = [
@@ -110,10 +110,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 38
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_5(self):
         spending_matrix = [
@@ -137,10 +137,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 24
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_6(self):
         spending_matrix = [
@@ -164,10 +164,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 25
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_7(self):
         spending_matrix = [
@@ -191,10 +191,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 27
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_8(self):
         spending_matrix = [
@@ -218,10 +218,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 25
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_9(self):
         spending_matrix = [
@@ -246,10 +246,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 25
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_10(self):
         spending_matrix = [
@@ -273,10 +273,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 20
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_vadim(self):
         spending_matrix = [
@@ -296,10 +296,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 24
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
     def test_solve_theory_example(self):
         spending_matrix = [
@@ -319,11 +319,10 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 25
 
-        result = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(len(result), 2)
-        self.assertEqual(expected_result_matrix, result[0])
-        self.assertEqual(expected_function_value, result[1])
+        self.assertEqual(expected_result_matrix, result)
+        self.assertEqual(expected_function_value, function_value)
 
 
 if __name__ == "__main__":
