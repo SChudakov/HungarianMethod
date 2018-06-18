@@ -1,4 +1,4 @@
-import numpy as nm
+import numpy as np
 
 
 class HMTable:
@@ -11,16 +11,19 @@ class HMTable:
     cross_out_marking = "^"
 
     def __init__(self, spending_matrix):
-        self.spending_matrix = nm.array(spending_matrix)
+        self.spending_matrix = np.array(spending_matrix)
         self.spending_matrix_size = len(spending_matrix)
 
-        self.zero_elements_marking = [[''] * len(spending_matrix) for x in range(len(spending_matrix))]
+        self.zero_elements_marking = np.empty(
+            shape=[len(spending_matrix), len(spending_matrix)],
+            dtype=str
+        )
 
-        self.rows_sharp_marking = [''] * len(spending_matrix)
-        self.columns_sharp_marking = [''] * len(spending_matrix)
+        self.rows_sharp_marking = np.empty(shape=len(spending_matrix), dtype=str)
+        self.columns_sharp_marking =np.empty(shape=len(spending_matrix), dtype=str)
 
-        self.rows_ampersand_marking = [''] * len(spending_matrix)
-        self.columns_ampersand_marking = [''] * len(spending_matrix)
+        self.rows_ampersand_marking = np.empty(shape=len(spending_matrix), dtype=str)
+        self.columns_ampersand_marking = np.empty(shape=len(spending_matrix), dtype=str)
 
     def mark_zero(self, row, column):
         self.zero_elements_marking[row][column] = HMTable.star_marking
