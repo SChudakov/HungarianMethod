@@ -1,9 +1,9 @@
-import copy
+import numpy as np
 import sys
 
 
 def solve_hm_table(table):
-    initial_spending_matrix = copy.deepcopy(table.spending_matrix)
+    initial_spending_matrix = np.copy(table.spending_matrix)
 
     solving_complete = False
     iteration = 1
@@ -23,7 +23,6 @@ def solve_hm_table(table):
 
 
 def subtract_min_values(table):
-
     # for i in range(table.spending_matrix_size):
     #     row_min_value = table.spending_matrix[i][0]
     #     for j in range(table.spending_matrix_size):
@@ -281,19 +280,19 @@ def min_element_in_non_crossed_out_rows_amd_columns(table):
 
 
 def form_solution(table, initial_spending_matrix):
-    function_value = 0
-    assignment_matrix = [[0] * table.spending_matrix_size for x in range(table.spending_matrix_size)]
+    appointments_matrix = np.zeros(
+        shape=[table.spending_matrix_size, table.spending_matrix_size],
+        dtype=np.int
+    )
     for i in range(table.spending_matrix_size):
         for j in range(table.spending_matrix_size):
             if table.is_marked_zero(i, j):
-                assignment_matrix[i][j] = 1
+                appointments_matrix[i][j] = 1
 
     print("ASSIGNMENT MATRIX")
-    print("\n".join(map(str, assignment_matrix)))
+    print("\n".join(map(str, appointments_matrix)))
 
-    for i in range(table.spending_matrix_size):
-        for j in range(table.spending_matrix_size):
-            function_value += assignment_matrix[i][j] * initial_spending_matrix[i][j]
+    function_value = np.sum(initial_spending_matrix * appointments_matrix)
     print("FUNCTION VALUE {}".format(function_value))
 
-    return assignment_matrix, function_value
+    return appointments_matrix, function_value

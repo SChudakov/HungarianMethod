@@ -1,4 +1,5 @@
 import unittest
+import numpy as np
 
 from hm_table import HMTable
 from hm_table_solving import solve_hm_table
@@ -28,9 +29,9 @@ class SolveHMTableTest(unittest.TestCase):
         ]
         expected_function_value = 16
 
-        result,function_value = solve_hm_table(table)
+        result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_2(self):
@@ -57,7 +58,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_3(self):
@@ -85,7 +86,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_4(self):
@@ -112,7 +113,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_5(self):
@@ -139,7 +140,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_6(self):
@@ -166,7 +167,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_7(self):
@@ -193,7 +194,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_8(self):
@@ -220,7 +221,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_9(self):
@@ -248,7 +249,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_10(self):
@@ -275,7 +276,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_vadim(self):
@@ -298,7 +299,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
     def test_solve_theory_example(self):
@@ -321,7 +322,7 @@ class SolveHMTableTest(unittest.TestCase):
 
         result, function_value = solve_hm_table(table)
 
-        self.assertEqual(expected_result_matrix, result)
+        self.assertTrue(np.array_equal(expected_result_matrix, result))
         self.assertEqual(expected_function_value, function_value)
 
 
